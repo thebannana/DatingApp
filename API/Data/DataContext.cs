@@ -1,10 +1,10 @@
-using System;
 using API.Enitites;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Data;
-
-public class DataContext(DbContextOptions options) : DbContext(options)
+namespace API.Data
 {
-    public DbSet<AppUser> Users { get; set; }
+    public class DataContext(DbContextOptions<DataContext> options) : DbContext(options)
+    {
+        public DbSet<AppUser> Users { get; set; }
+    }
 }
